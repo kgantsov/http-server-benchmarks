@@ -14,10 +14,10 @@ start_go_fiber:
 	cd go_fiber && go run .
 
 start_rust_actix_web:
-	cd rust_actix_web && cargo build --release && target/release/rust_actix_web
+	cd rust_actix_web && cargo run --release
 
 run_bench_get:
 	hammerload --duration 10 --concurrency 200 http -u http://localhost:8080/healthz
 
 run_bench_post:
-    hammerload --duration 10 --concurrency 200 http -X POST -u http://localhost:8080/users -H "Content-Type: application/json" --body '{"first_name": "John", "last_name": "Doe", "email": "john.doe@gmail.com"}'
+	hammerload --duration 10 --concurrency 200 http -X POST -u http://localhost:8080/users -H "Content-Type: application/json" --body '{"first_name": "John", "last_name": "Doe", "email": "john.doe@gmail.com"}'
