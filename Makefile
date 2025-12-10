@@ -16,6 +16,9 @@ start_go_fiber:
 start_rust_actix_web:
 	cd rust_actix_web && cargo run --release
 
+start_rust_axum:
+	cd rust_axum && cargo run --release
+
 run_bench_get:
 	hammerload --duration 10 --concurrency 200 http -u http://localhost:8080/healthz
 
