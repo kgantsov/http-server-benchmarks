@@ -13,6 +13,9 @@ start_python_fastapi:
 start_go_fiber:
 	cd go_fiber && go run .
 
+start_go_net_http:
+	cd go_net_http && go run .
+
 start_rust_actix_web:
 	cd rust_actix_web && cargo run --release
 
