@@ -27,3 +27,9 @@ run_bench_get:
 
 run_bench_post:
 	hammerload --duration 10 --concurrency 200 http -X POST -u http://localhost:8080/users -H "Content-Type: application/json" --body '{"first_name": "John", "last_name": "Doe", "email": "john.doe@gmail.com"}'
+
+run_bench_get_file:
+	hammerload --duration 10 --concurrency 100 http -X GET -u http://localhost:8080/files/b0320eab-57a6-4c45-ba6d-0b68a3501ef6
+
+run_bench_post_file:
+	hammerload --duration 10 --concurrency 100 http -X POST -u http://localhost:8080/files -H "Content-Type: application/json" -b '{"filename": "test.txt", "directory_path": "", "file_type": "file", "checksum": "checksum", "size": 0}'
