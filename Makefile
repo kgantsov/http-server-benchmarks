@@ -11,7 +11,7 @@ start_python_fastapi:
 	cd python_fastapi && uvicorn main:app --host 0.0.0.0 --port 8080 --workers 8 --log-level warning
 
 start_pypy_fastapi:
-	cd python_fastapi && hypercorn main:app --bind 0.0.0.0:8080 --workers 8 --log-level warning
+	cd python_fastapi && uvicorn main:app --host 0.0.0.0 --port 8080 --workers 8 --log-level warning
 
 start_go_fiber:
 	cd go_fiber && go run .
