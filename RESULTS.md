@@ -2,6 +2,7 @@ Benchmark results:
 1. Node
   -  [node](RESULTS_NODE.md)
 2. Python
+  -  [PyPy](RESULTS_PYPY_FASTAPI.md)
   -  [Flask](RESULTS_PYTHON_FLASK.md)
   -  [FastAPI](RESULTS_PYTHON_FASTAPI.md)
 3. Go
