@@ -26,6 +26,9 @@ def close_db(exception):
 
 def init_db():
     db = sqlite3.connect(DB_PATH)
+
+    db.execute("PRAGMA journal_mode=WAL;")
+
     db.execute(
         """
         CREATE TABLE IF NOT EXISTS files (

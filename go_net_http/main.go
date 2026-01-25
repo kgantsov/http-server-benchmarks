@@ -162,7 +162,12 @@ func main() {
 }
 
 func initDB(db *sql.DB) error {
-	_, err := db.Exec(`
+	_, err := db.Exec(`PRAGMA journal_mode=WAL;`)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS files (
 			id TEXT PRIMARY KEY,
 			directory_path TEXT NOT NULL,

@@ -43,6 +43,10 @@ func main() {
 	}
 	defer db.Close()
 
+	_, err = db.Exec(`PRAGMA journal_mode=WAL;`)
+	if err != nil {
+		log.Fatal(err)
+	}
 	_, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS files (
 			id TEXT PRIMARY KEY,

@@ -134,6 +134,9 @@ async fn get_file(db: web::Data<Mutex<Connection>>, file_id: web::Path<String>) 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let conn = Connection::open("files.db").unwrap();
+
+    conn.execute_batch("PRAGMA journal_mode=WAL;").unwrap();
+
     conn.execute(
         r#"
         CREATE TABLE IF NOT EXISTS files (

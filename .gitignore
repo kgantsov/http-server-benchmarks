@@ -4,3 +4,5 @@ node_modules
 __pycache__
 target
 */files.db
+*/files.db-shm
+*/files.db-wal
